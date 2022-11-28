@@ -1,6 +1,8 @@
 @use "./kit-styles.css";
 
 $green: #008081;
+$card-background: #c0c0c0;
+$card-select: #0004bd;
 
 html,
 body {
@@ -12,6 +14,10 @@ body {
 
 .invisible-text {
   visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
 }
 
 // .startup-screen {
@@ -172,6 +178,17 @@ input[type="password"] {
     // border: 1px solid blue;
   }
 }
+.desktop-icon {
+  background-color: transparent;
+  border: 0px;
+  margin: 20px 5px;
+  text-align: center;
+
+  &__text {
+    color: white;
+  }
+}
+// Menu
 .start-btn {
   display: flex;
   padding: 2px;
@@ -187,11 +204,45 @@ input[type="password"] {
   }
 }
 
-.desktop-icon {
-  margin: 20px;
-  text-align: center;
+.start__modal {
+  padding-top: 0px;
+  height: 360px;
+  width: 200px;
+  position: absolute;
+  bottom: 5%;
+  left: 0;
+  display: flex;
+  // visibility: hidden;
 
-  &__text {
+  &--aside {
+    margin: 0;
+    width: 35px;
+    height: 100%;
+    rotate: 180deg;
+    color: white;
+    // position: relative;
+    // top: 0;
+    background-color: #808080;
+    &-text {
+      rotate: 90deg;
+    }
+  }
+  &--container {
+    width: 265px;
+    // background-color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+.menu-icon {
+  display: flex;
+  align-items: center;
+  &__img {
+    margin-right: 5px;
+  }
+  &:hover {
+    background-color: $card-select;
     color: white;
   }
 }
