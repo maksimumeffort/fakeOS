@@ -114,7 +114,7 @@ const desktopIconNames = {
 };
 
 const desktopIcons = Object.entries(desktopIconNames).forEach((entry) => {
-  const newElement = document.createElement("div");
+  const newElement = document.createElement("button");
   const newElementImage = document.createElement("img");
   const newElementText = document.createElement("p");
   const textToPut = entry[1]

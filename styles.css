@@ -7812,6 +7812,8 @@ input[type=password] {
 }
 
 .desktop-icon {
+  background-color: transparent;
+  border: 0px;
   margin: 20px;
   text-align: center;
 }
