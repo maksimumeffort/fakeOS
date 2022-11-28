@@ -1,20 +1,19 @@
 @font-face {
   font-family: "Windows 95";
-  src: url("../fonts/w-95-sans-serif.woff2") format("woff2"), url("../fonts/w-95-sans-serif.woff") format("woff");
+  src: url("../fonts/w-95-sans-serif.woff2") format("woff2"),
+    url("../fonts/w-95-sans-serif.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 * {
   margin: 0;
 }
-
 .start-div {
   margin: 30px;
+  &__message {
+    color: white;
+  }
 }
-.start-div__message {
-  color: white;
-}
-
 .start-screen__wallpaper {
   box-sizing: border-box;
   width: 100%;
