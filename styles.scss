@@ -1,38 +1,47 @@
 @use "./kit-styles.css";
 
+$green: #008081;
+
 html,
 body {
+  box-sizing: border-box;
   margin: 0;
-  height: 100%;
-  overflow: hidden;
+  height: 100vh;
+  // overflow: hidden;
 }
 
 .invisible-text {
   visibility: hidden;
 }
 
+// .startup-screen {
+
+// }
 body {
-  background-color: black;
+  background-image: url(./assets/imgs/loading-screen.jpg);
+  background-repeat: no-repeat;
+  // background-position: center center;
+  background-size: cover;
 }
 
-.body-green {
-  background-color: #008081;
+#start-wrapper {
+  width: 100%;
+  height: 100%;
+  // comment out display property to check
+  display: block;
+  // z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
 }
 
 .start-div {
   margin: 30px;
-  // comment out display property before inititation
-  // display: none;
+  width: 500px;
   &__message {
     color: white;
   }
-}
-.wallpaper-container {
-  box-sizing: border-box;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: none;
 }
 
 // Login Modal
@@ -55,9 +64,22 @@ input[type="password"] {
   border: 2px solid red;
 }
 
-.login-div {
+#login-wrapper {
   // comment out display property to check
-  // visibility: hidden;
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  // z-index: 100;
+  top: 0;
+  left: 0;
+  background-color: $green;
+}
+
+.login-div {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -72,12 +94,13 @@ input[type="password"] {
   &__modal {
     width: 600px;
     height: 200px;
-    display: none;
+    // toggle display to check
+    display: block;
   }
 
   &__layout {
     display: flex;
-    margin-top: 5px;
+    // margin-top: 5px;
 
     &--key-container {
       width: 20%;
@@ -112,4 +135,49 @@ input[type="password"] {
   justify-content: space-around;
   width: 20%;
   border: 0px;
+}
+
+// desktop
+#desktop-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  // border: 1px solid white;
+  background-color: $green;
+}
+
+.desktop {
+  &__container {
+    height: 95%;
+    // border: 1px solid red;
+  }
+  &__bottom-bar {
+    display: flex;
+    height: 5%;
+    justify-content: space-between;
+    // height: 5%;
+    // border: 1px solid blue;
+  }
+}
+.start-btn {
+  display: flex;
+  padding: 2px;
+  &__icon {
+    margin-left: 3px;
+    padding-top: 2px;
+    // border: 1px solid red;
+    height: 90%;
+  }
+  &__text {
+    margin-left: 12px;
+    font-size: 80%;
+  }
+}
+
+li {
+  list-style: none;
 }

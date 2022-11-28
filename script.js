@@ -52,7 +52,7 @@ const initiate = () => {
 // user login function
 const login = () => {
   showHide(loginWindow, 1000, "display", "none");
-  console.log(bodyMain);
+  // console.log(bodyMain);
   // background.style.backgroundColor = "008081";
 
   loginJingle.play();
