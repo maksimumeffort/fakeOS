@@ -45,7 +45,7 @@ const initiate = () => {
   }, 6000);
 };
 
-initiate();
+// initiate();
 
 // play login jingle
 
