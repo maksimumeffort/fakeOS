@@ -5,15 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles.css" />
+
     <script src="./script.js" defer></script>
     <title>Windows 95</title>
   </head>
   <body>
-    <img
+    <div class="wallpaper-container">
+<img
       src="./assets/imgs/loading-screen.jpg"
       alt=""
       class="start-screen__wallpaper"
     />
+    </div>
+    
     <!-- initialize -->
     <section class="start-div">
       <h3 class="start-div__message">Starting Windows 95...</h3>
@@ -21,6 +25,58 @@
     </section>
     <!-- 'starting windows..' + blinker -> start screen-->
     <!-- login -->
+    <section class="login-div">
+      <div class="card card-tertiary login-div__modal">
+        <div class="card-header login-div__header">
+          <span>Welcome to Windows</span>
+        <button
+                  class="btn btn-x btn-primary border-dark"
+                  type="button"
+                >
+                  <span class="btn-text bold">X</span>
+                </button>
+              </div>
+        <div class="login-div__layout">
+          <div class="login-div__layout--key-container">
+            <img
+              src="./assets/icons/windows-key.ico"
+              alt=""
+              class="login-div__layout--key-icon"
+            />
+          </div>
+          <form action="" class="login-div__layout--form">
+            <fieldset id="form-para">
+              <p class="login-div__layout--form-text">
+                Type a username and password to login to Windows
+              </p>
+            </fieldset>
+            <fieldset id="form-inputs">
+              <label for="username" class="mr-3"
+                >User name:<span class="invisible-text">.</span></label
+              >
+              <input id="username" type="text" class="form-control w-75" value="maksimumeffort"/>
+              <label for="password" class="mr-3"
+                >Password:<span class="invisible-text">...</span></label
+              >
+              <input id="password" type="password" class="form-control w-75" />
+            </fieldset>
+            <fieldset id="form-buttons">
+<button
+                  class="btn btn-sm mr-2 btn-primary border-dark"
+                  type="submit"
+                >
+                  <span class="btn-text">OK</span>
+                </button>
+                <button class="btn btn-sm btn-primary" type="reset">
+                  <span class="btn-text">Cancel</span>
+                </button>
+            </fieldset>
+            
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
     <!-- login modal + startup modal + tone-->
     <!-- desktop-layout-->
     <!-- icons layout and positioning + current time showing-->
