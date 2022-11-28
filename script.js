@@ -19,6 +19,8 @@ const startButton = document.querySelector(".start-btn");
 const desktopIconsContainer = document.querySelector(
   ".desktop__container--icons-container"
 );
+const startModal = document.querySelector("#start__modal");
+const menuIconsContainer = document.querySelector(".start__modal--container");
 
 // initial screen
 // blinker
@@ -97,10 +99,6 @@ const newTime = `${time.split(" ")[0]} ${time.split(" ")[1].toUpperCase()}`;
 
 timeNow.innerHTML = `${newTime}`;
 
-startButton.addEventListener("click", (event) => {
-  clickSound();
-  console.log("start button clicked");
-});
 const desktopItems = [];
 const desktopIconNames = {
   // Desktop icons - [my computer, network neighbourhood, inbox, recycle bin, the internet, MSN, my briefcase]
@@ -131,4 +129,47 @@ const desktopIcons = Object.entries(desktopIconNames).forEach((entry) => {
   newElement.appendChild(newElementImage);
   newElement.appendChild(newElementText);
   desktopIconsContainer.appendChild(newElement);
+});
+
+// Start Menu
+
+startButton.addEventListener("click", (event) => {
+  clickSound();
+  // console.log("start button clicked");
+  // startToggle();
+  console.log(startModal);
+  startModal.classList.toggle("visible");
+  // startModal.classList.toggle("invisible");
+});
+
+const menuIconNames = {
+  //  startMenu - [ programs, documents, settings, find, help, run, suspend, shut down…]
+  programs: "programs",
+  documents: "documents",
+  settings: "settings",
+  find: "find",
+  help: "help",
+  run: "run",
+  suspend: "suspend",
+  shutDown: "shut-down",
+};
+
+const menuIcons = Object.entries(menuIconNames).forEach((entry) => {
+  const newElement = document.createElement("button");
+  const newElementImage = document.createElement("img");
+  const newElementText = document.createElement("p");
+  const textToPut = entry[1]
+    .split("-")
+    .map((el) => el[0].toUpperCase() + el.substring(1))
+    .join(" ");
+  newElement.id = entry[0];
+  newElement.className = "menu-icon";
+  newElementImage.className = "menu-icon__img";
+  newElementText.className = "menu-icon__text";
+
+  newElementText.innerHTML = textToPut;
+  newElementImage.src = `./assets/icons/${entry[1]}.ico`;
+  newElement.appendChild(newElementImage);
+  newElement.appendChild(newElementText);
+  menuIconsContainer.appendChild(newElement);
 });

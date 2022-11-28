@@ -7661,6 +7661,10 @@ body {
   visibility: hidden;
 }
 
+.visible {
+  visibility: visible;
+}
+
 body {
   background-image: url(./assets/imgs/loading-screen.jpg);
   background-repeat: no-repeat;
@@ -7797,6 +7801,16 @@ input[type=password] {
   justify-content: space-between;
 }
 
+.desktop-icon {
+  background-color: transparent;
+  border: 0px;
+  margin: 20px 5px;
+  text-align: center;
+}
+.desktop-icon__text {
+  color: white;
+}
+
 .start-btn {
   display: flex;
   padding: 2px;
@@ -7811,12 +7825,41 @@ input[type=password] {
   font-size: 80%;
 }
 
-.desktop-icon {
-  background-color: transparent;
-  border: 0px;
-  margin: 20px;
-  text-align: center;
+.start__modal {
+  padding-top: 0px;
+  height: 360px;
+  width: 200px;
+  position: absolute;
+  bottom: 5%;
+  left: 0;
+  display: flex;
 }
-.desktop-icon__text {
+.start__modal--aside {
+  margin: 0;
+  width: 35px;
+  height: 100%;
+  rotate: 180deg;
+  color: white;
+  background-color: #808080;
+}
+.start__modal--aside-text {
+  rotate: 90deg;
+}
+.start__modal--container {
+  width: 265px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu-icon {
+  display: flex;
+  align-items: center;
+}
+.menu-icon__img {
+  margin-right: 5px;
+}
+.menu-icon:hover {
+  background-color: #0004bd;
   color: white;
 }
