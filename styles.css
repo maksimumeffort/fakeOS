@@ -7654,6 +7654,7 @@ body {
   box-sizing: border-box;
   margin: 0;
   height: 100vh;
+  overflow: hidden;
 }
 
 .invisible-text {
@@ -7782,6 +7783,14 @@ input[type=password] {
 .desktop__container {
   height: 95%;
 }
+.desktop__container--icons-container {
+  height: 99%;
+  width: 200px;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  padding-top: 15px;
+}
 .desktop__bottom-bar {
   display: flex;
   height: 5%;
@@ -7802,6 +7811,10 @@ input[type=password] {
   font-size: 80%;
 }
 
-li {
-  list-style: none;
+.desktop-icon {
+  margin: 20px;
+  text-align: center;
+}
+.desktop-icon__text {
+  color: white;
 }

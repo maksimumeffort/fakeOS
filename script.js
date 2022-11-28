@@ -12,6 +12,13 @@ const loginForm = document.querySelector(".login-div__layout--form");
 const usernameInput = document.querySelector("#username");
 const passwordInput = document.querySelector("#password");
 const loginJingle = new Audio("./assets/sounds/win95-startup.mp3");
+const clicker = new Audio("./assets/sounds/mouse-click.mp3");
+// desktop
+const timeNow = document.querySelector(".time-now");
+const startButton = document.querySelector(".start-btn");
+const desktopIconsContainer = document.querySelector(
+  ".desktop__container--icons-container"
+);
 
 // initial screen
 // blinker
@@ -47,7 +54,10 @@ const initiate = () => {
 
 // initiate();
 
-// play login jingle
+// click sound
+const clickSound = () => {
+  clicker.play();
+};
 
 // user login function
 const login = () => {
@@ -71,4 +81,54 @@ loginForm.addEventListener("submit", (event) => {
   } else {
     passwordInput.classList.toggle("error");
   }
+});
+
+// Desktop
+// const todayDate = new Date();
+// time function
+const today = new Date();
+
+const time = today.toLocaleTimeString("en-AU", {
+  hour: "2-digit",
+  minute: "2-digit",
+});
+const upperCaseAmPM = time.split(" ")[1].toUpperCase();
+const newTime = `${time.split(" ")[0]} ${time.split(" ")[1].toUpperCase()}`;
+
+timeNow.innerHTML = `${newTime}`;
+
+startButton.addEventListener("click", (event) => {
+  clickSound();
+  console.log("start button clicked");
+});
+const desktopItems = [];
+const desktopIconNames = {
+  // Desktop icons - [my computer, network neighbourhood, inbox, recycle bin, the internet, MSN, my briefcase]
+  myComputer: "my-computer",
+  networkNeighbourhood: "network-neighbourhood",
+  inbox: "inbox",
+  recycleBin: "recycle-empty",
+  theInternet: "the-internet",
+  msn: "the-microsoft-network",
+  myBriefcase: "my-briefcase",
+};
+
+const desktopIcons = Object.entries(desktopIconNames).forEach((entry) => {
+  const newElement = document.createElement("div");
+  const newElementImage = document.createElement("img");
+  const newElementText = document.createElement("p");
+  const textToPut = entry[1]
+    .split("-")
+    .map((el) => el[0].toUpperCase() + el.substring(1))
+    .join(" ");
+  newElement.id = entry[0];
+  newElement.className = "desktop-icon";
+  newElementImage.className = "desktop-icon__img";
+  newElementText.className = "desktop-icon__text";
+
+  newElementText.innerHTML = textToPut;
+  newElementImage.src = `./assets/icons/${entry[1]}.ico`;
+  newElement.appendChild(newElementImage);
+  newElement.appendChild(newElementText);
+  desktopIconsContainer.appendChild(newElement);
 });

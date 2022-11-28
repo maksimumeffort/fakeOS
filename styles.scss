@@ -7,7 +7,7 @@ body {
   box-sizing: border-box;
   margin: 0;
   height: 100vh;
-  // overflow: hidden;
+  overflow: hidden;
 }
 
 .invisible-text {
@@ -153,6 +153,15 @@ input[type="password"] {
 .desktop {
   &__container {
     height: 95%;
+    &--icons-container {
+      height: 99%;
+      width: 200px;
+      // border: 1px solid white;
+      display: flex;
+      flex-flow: column wrap;
+      align-items: center;
+      padding-top: 15px;
+    }
     // border: 1px solid red;
   }
   &__bottom-bar {
@@ -178,6 +187,11 @@ input[type="password"] {
   }
 }
 
-li {
-  list-style: none;
+.desktop-icon {
+  margin: 20px;
+  text-align: center;
+
+  &__text {
+    color: white;
+  }
 }
