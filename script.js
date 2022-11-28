@@ -22,3 +22,18 @@ const initiate = () => {
 };
 
 // initiate();
+
+// Login validation
+const passKey = "maksimumeffort";
+const loginForm = document.querySelector(".login-div__layout--form");
+const usernameInput = document.querySelector("#username");
+const passwordInput = document.querySelector("#password");
+
+loginForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  if (usernameInput.value === passKey && passwordInput.value === passKey) {
+    console.log("log in successful");
+  } else {
+    console.log("incorrect login");
+  }
+});
