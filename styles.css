@@ -7651,8 +7651,9 @@ a:hover,
 
 html,
 body {
+  box-sizing: border-box;
   margin: 0;
-  height: 100%;
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -7661,26 +7662,27 @@ body {
 }
 
 body {
-  background-color: black;
+  background-image: url(./assets/imgs/loading-screen.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.body-green {
-  background-color: #008081;
+#start-wrapper {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
 }
 
 .start-div {
   margin: 30px;
+  width: 500px;
 }
 .start-div__message {
   color: white;
-}
-
-.wallpaper-container {
-  box-sizing: border-box;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: none;
 }
 
 .btn-text {
@@ -7704,7 +7706,20 @@ input[type=password] {
   border: 2px solid red;
 }
 
+#login-wrapper {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #008081;
+}
+
 .login-div {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -7718,11 +7733,10 @@ input[type=password] {
 .login-div__modal {
   width: 600px;
   height: 200px;
-  display: none;
+  display: block;
 }
 .login-div__layout {
   display: flex;
-  margin-top: 5px;
 }
 .login-div__layout--key-container {
   width: 20%;
@@ -7753,4 +7767,54 @@ input[type=password] {
   justify-content: space-around;
   width: 20%;
   border: 0px;
+}
+
+#desktop-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  background-color: #008081;
+}
+
+.desktop__container {
+  height: 95%;
+}
+.desktop__container--icons-container {
+  height: 99%;
+  width: 200px;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  padding-top: 15px;
+}
+.desktop__bottom-bar {
+  display: flex;
+  height: 5%;
+  justify-content: space-between;
+}
+
+.start-btn {
+  display: flex;
+  padding: 2px;
+}
+.start-btn__icon {
+  margin-left: 3px;
+  padding-top: 2px;
+  height: 90%;
+}
+.start-btn__text {
+  margin-left: 12px;
+  font-size: 80%;
+}
+
+.desktop-icon {
+  margin: 20px;
+  text-align: center;
+}
+.desktop-icon__text {
+  color: white;
 }
