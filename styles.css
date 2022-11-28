@@ -7649,9 +7649,11 @@ a:hover,
   box-shadow: 0 0.5rem 1rem rgba(42, 53, 79, 0.12);
 }
 
-/*# sourceMappingURL=pixel.css.map */
-* {
+html,
+body {
   margin: 0;
+  height: 100%;
+  overflow: hidden;
 }
 
 .invisible-text {
@@ -7662,15 +7664,18 @@ body {
   background-color: black;
 }
 
+.body-green {
+  background-color: #008081;
+}
+
 .start-div {
   margin: 30px;
-  display: none;
 }
 .start-div__message {
   color: white;
 }
 
-.start-screen__wallpaper {
+.wallpaper-container {
   box-sizing: border-box;
   width: 100%;
   height: 100%;
@@ -7695,6 +7700,10 @@ input[type=password] {
   font-family: "Windows 95";
 }
 
+.error {
+  border: 2px solid red;
+}
+
 .login-div {
   width: 100vw;
   height: 100vh;
@@ -7709,6 +7718,7 @@ input[type=password] {
 .login-div__modal {
   width: 600px;
   height: 200px;
+  display: none;
 }
 .login-div__layout {
   display: flex;
