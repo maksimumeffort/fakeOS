@@ -7,6 +7,7 @@ const blinker = document.querySelector(".blinker");
 const startDiv = document.querySelector(".start-div");
 const startWallpaper = document.querySelector(".wallpaper-container");
 // login
+const allButtons = document.querySelectorAll(".btn");
 const loginModal = document.querySelector(".login-div__modal");
 const loginWrapper = document.querySelector("#login-wrapper");
 const loginWindow = document.querySelector(".login-div");
@@ -78,6 +79,11 @@ const login = () => {
   // startWallpaper.src = "./";
   desktopWrapper.style.zIndex = 100;
 };
+
+// btn click
+
+// x-button
+// TODO2: write function to shut down display
 
 // Login validation
 const passKey = "maksimumeffort";
