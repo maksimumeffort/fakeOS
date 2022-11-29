@@ -35,7 +35,7 @@ body {
   height: 100%;
   // comment out display property to check
   display: block;
-  // z-index: 100;
+  z-index: 100;
   position: absolute;
   top: 0;
   left: 0;
@@ -72,7 +72,8 @@ input[type="password"] {
 
 #login-wrapper {
   // comment out display property to check
-  display: none;
+  z-index: -2;
+  // display: none;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -148,6 +149,8 @@ input[type="password"] {
   position: absolute;
   top: 0;
   left: 0;
+  // z-index: -1;
+  // z-index: 100;
   height: 100%;
   width: 100vw;
   display: flex;
@@ -187,6 +190,9 @@ input[type="password"] {
   &__text {
     color: white;
   }
+  // &: {
+  //   background-color: $card-select;
+  // }
 }
 // Menu
 .start-btn {
@@ -211,6 +217,7 @@ input[type="password"] {
   position: absolute;
   bottom: 5%;
   left: 0;
+  // z-index: 99;
   display: flex;
   // visibility: hidden;
 

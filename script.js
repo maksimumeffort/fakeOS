@@ -2,11 +2,13 @@
 
 // init
 const bodyMain = document.querySelector("body");
+const startWrapper = document.querySelector("#start-wrapper");
 const blinker = document.querySelector(".blinker");
 const startDiv = document.querySelector(".start-div");
 const startWallpaper = document.querySelector(".wallpaper-container");
 // login
 const loginModal = document.querySelector(".login-div__modal");
+const loginWrapper = document.querySelector("#login-wrapper");
 const loginWindow = document.querySelector(".login-div");
 const loginForm = document.querySelector(".login-div__layout--form");
 const usernameInput = document.querySelector("#username");
@@ -14,6 +16,7 @@ const passwordInput = document.querySelector("#password");
 const loginJingle = new Audio("./assets/sounds/win95-startup.mp3");
 const clicker = new Audio("./assets/sounds/mouse-click.mp3");
 // desktop
+const desktopWrapper = document.querySelector("#desktop-wrapper");
 const timeNow = document.querySelector(".time-now");
 const startButton = document.querySelector(".start-btn");
 const desktopIconsContainer = document.querySelector(
@@ -40,21 +43,23 @@ const initiate = () => {
 
   showHide(startDiv, 5000, "display", "none");
 
-  showHide(startWallpaper, 6000, "display", "block");
+  // showHide(startWallpaper, 6000, "display", "block");
 
-  showHide(startWallpaper, 6000, "display", "none");
+  // showHide(startWallpaper, 6000, "display", "none");
 
   // window.setTimeout(() => {
   //   bodyMain.removeChild(startWallpaper);
   // }, 5000);
 
   window.setTimeout(() => {
-    loginModal.style.display = "block";
-    bodyMain.classList.toggle("body-green");
+    startWrapper.style.zIndex = -1;
+    // loginModal.style.display = "block";
+    // bodyMain.classList.toggle("body-green");
+    loginWrapper.style.zIndex = 100;
   }, 6000);
 };
 
-// initiate();
+initiate();
 
 // click sound
 const clickSound = () => {
@@ -64,13 +69,14 @@ const clickSound = () => {
 // user login function
 const login = () => {
   showHide(loginWindow, 1000, "display", "none");
+  loginWrapper.style.zIndex = -1;
   // console.log(bodyMain);
   // background.style.backgroundColor = "008081";
+  // showHide(body, 1000, "zIndex", 100);
 
   loginJingle.play();
   // startWallpaper.src = "./";
-  // console.dir(startWallpaper);
-  // loginWindow.style.display = "none";
+  desktopWrapper.style.zIndex = 100;
 };
 
 // Login validation
@@ -133,13 +139,26 @@ const desktopIcons = Object.entries(desktopIconNames).forEach((entry) => {
 
 // Start Menu
 
+const toggleMenu = () => {
+  // let z = startModal.style.zIndex;
+  if (startModal.style.zIndex != 101) {
+    console.log("executing");
+    startModal.style.zIndex = 101;
+  } else {
+    startModal.style.zIndex = 99;
+  }
+
+  // console.log(z);
+};
+
 startButton.addEventListener("click", (event) => {
   clickSound();
   // console.log("start button clicked");
   // startToggle();
-  console.log(startModal);
-  startModal.classList.toggle("visible");
+  // console.log(startModal);
   // startModal.classList.toggle("invisible");
+  console.log(startModal);
+  toggleMenu();
 });
 
 const menuIconNames = {
