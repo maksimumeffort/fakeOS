@@ -1,30 +1,24 @@
-// DOM elements
-
-// init
-const bodyMain = document.querySelector("body");
-const startWrapper = document.querySelector("#start-wrapper");
-const blinker = document.querySelector(".blinker");
-const startDiv = document.querySelector(".start-div");
-const startWallpaper = document.querySelector(".wallpaper-container");
-// login
-const allButtons = document.querySelectorAll(".btn");
-const loginModal = document.querySelector(".login-div__modal");
-const loginWrapper = document.querySelector("#login-wrapper");
-const loginWindow = document.querySelector(".login-div");
-const loginForm = document.querySelector(".login-div__layout--form");
-const usernameInput = document.querySelector("#username");
-const passwordInput = document.querySelector("#password");
-const loginJingle = new Audio("./assets/sounds/win95-startup.mp3");
-const clicker = new Audio("./assets/sounds/mouse-click.mp3");
-// desktop
-const desktopWrapper = document.querySelector("#desktop-wrapper");
-const timeNow = document.querySelector(".time-now");
-const startButton = document.querySelector(".start-btn");
-const desktopIconsContainer = document.querySelector(
-  ".desktop__container--icons-container"
-);
-const startModal = document.querySelector("#start__modal");
-const menuIconsContainer = document.querySelector(".start__modal--container");
+// imports
+import {
+  bodyMain,
+  startWrapper,
+  blinker,
+  startDiv,
+  allButtons,
+  loginWrapper,
+  loginWindow,
+  loginForm,
+  usernameInput,
+  passwordInput,
+  loginJingle,
+  clicker,
+  desktopWrapper,
+  timeNow,
+  startButton,
+  desktopIconsContainer,
+  startModal,
+  menuIconsContainer,
+} from "./dom.js";
 
 // initial screen
 // blinker
@@ -44,18 +38,11 @@ const initiate = () => {
 
   showHide(startDiv, 5000, "display", "none");
 
+  // TODO: briefly show body background image before login screen
   // showHide(startWallpaper, 6000, "display", "block");
-
-  // showHide(startWallpaper, 6000, "display", "none");
-
-  // window.setTimeout(() => {
-  //   bodyMain.removeChild(startWallpaper);
-  // }, 5000);
 
   window.setTimeout(() => {
     startWrapper.style.zIndex = -1;
-    // loginModal.style.display = "block";
-    // bodyMain.classList.toggle("body-green");
     loginWrapper.style.zIndex = 100;
   }, 6000);
 };
@@ -71,12 +58,9 @@ const clickSound = () => {
 const login = () => {
   showHide(loginWindow, 1000, "display", "none");
   loginWrapper.style.zIndex = -1;
-  // console.log(bodyMain);
-  // background.style.backgroundColor = "008081";
-  // showHide(body, 1000, "zIndex", 100);
 
   loginJingle.play();
-  // startWallpaper.src = "./";
+
   desktopWrapper.style.zIndex = 100;
 };
 
@@ -98,7 +82,6 @@ loginForm.addEventListener("submit", (event) => {
 });
 
 // Desktop
-// const todayDate = new Date();
 // time function
 const today = new Date();
 
@@ -153,16 +136,11 @@ const toggleMenu = () => {
   } else {
     startModal.style.zIndex = 99;
   }
-
-  // console.log(z);
 };
 
 startButton.addEventListener("click", (event) => {
   clickSound();
-  // console.log("start button clicked");
-  // startToggle();
-  // console.log(startModal);
-  // startModal.classList.toggle("invisible");
+
   console.log(startModal);
   toggleMenu();
 });

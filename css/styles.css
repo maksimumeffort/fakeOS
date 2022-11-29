@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Windows 95";
-  src: url("./assets/fonts/w-95-sans-serif.woff2") format("woff2"), url("./assets/fonts/w-95-sans-serif.woff") format("woff");
+  src: url("../assets/fonts/w-95-sans-serif.woff2") format("woff2"), url("../assets/fonts/w-95-sans-serif.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -7651,6 +7651,7 @@ a:hover,
 
 html,
 body {
+  font-family: "Windows 95";
   box-sizing: border-box;
   margin: 0;
   height: 100vh;
