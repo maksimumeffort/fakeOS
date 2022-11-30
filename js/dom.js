@@ -1,5 +1,9 @@
 // DOM elements
 export const allButtons = document.querySelectorAll(".btn");
+export const allXBtns = document.querySelectorAll(".btn-x");
+export const allModals = document.querySelectorAll(".modal");
+export const mainModal = document.querySelector(".main__modal");
+export const mainModalXbtn = document.querySelector(".main__modal--btn");
 
 // init
 export const bodyMain = document.querySelector("body");
