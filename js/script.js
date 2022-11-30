@@ -4,7 +4,6 @@ import {
   startWrapper,
   blinker,
   startDiv,
-  allButtons,
   loginWrapper,
   loginWindow,
   loginForm,
@@ -18,6 +17,8 @@ import {
   desktopIconsContainer,
   startModal,
   menuIconsContainer,
+  mainModal,
+  mainModalXbtn,
 } from "./dom.js";
 
 // initial screen
@@ -131,7 +132,7 @@ const desktopIcons = Object.entries(desktopIconNames).forEach((entry) => {
 const toggleMenu = () => {
   // let z = startModal.style.zIndex;
   if (startModal.style.zIndex != 101) {
-    console.log("executing");
+    // console.log("executing");
     startModal.style.zIndex = 101;
   } else {
     startModal.style.zIndex = 99;
@@ -175,4 +176,31 @@ const menuIcons = Object.entries(menuIconNames).forEach((entry) => {
   newElement.appendChild(newElementImage);
   newElement.appendChild(newElementText);
   menuIconsContainer.appendChild(newElement);
+});
+
+// x-btn and close modal
+mainModalXbtn.addEventListener("click", () => {
+  mainModal.style.zIndex = 99;
+});
+// allXBtns.forEach((btn) => {
+//   allModals.forEach((modal) => {
+//     modal.style.zIndex = -1;
+//   });
+// });
+const allDesktopIcons = document.querySelectorAll(".desktop-icon");
+const allMenuIcons = document.querySelectorAll(".menu-icon");
+// console.log(allDesktopIcons);
+const tellIconOpenModal = (icon) => {
+  const iconName = icon.children[1].innerHTML;
+  icon.addEventListener("click", () => {
+    mainModal.style.zIndex = 101;
+    mainModal.children[0].children[0].innerHTML = iconName;
+  });
+};
+
+allDesktopIcons.forEach((icon) => {
+  tellIconOpenModal(icon);
+});
+allMenuIcons.forEach((icon) => {
+  tellIconOpenModal(icon);
 });

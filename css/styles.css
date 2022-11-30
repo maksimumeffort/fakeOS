@@ -7667,7 +7667,6 @@ body {
 }
 
 body {
-  background-image: url(./assets/imgs/loading-screen.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -7865,4 +7864,26 @@ input[type=password] {
 .menu-icon:hover {
   background-color: #0004bd;
   color: white;
+}
+
+.white-span {
+  color: white;
+}
+
+.main__modal {
+  padding-top: 0px;
+  height: 400px;
+  width: 400px;
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  display: flex;
+  flex-direction: column;
+}
+.main__modal--header {
+  display: flex;
+  justify-content: space-between;
+}
+.main__modal--container {
+  height: 100%;
 }
